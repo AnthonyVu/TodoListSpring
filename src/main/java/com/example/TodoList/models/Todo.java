@@ -25,15 +25,11 @@ public class Todo {
     @JoinColumn(name = "user_id")
     private AppUser user;
 
-    public Todo(String title, String description, String priority) {
+    public Todo(String title, String description, LocalDateTime due_date, String priority) {
         this.title = title;
         this.description = description;
+        this.due_date = due_date;
         this.priority = priority;
-    }
-
-    @PrePersist
-    void setDate() {
-        due_date = LocalDateTime.now();
     }
 
     @Override

@@ -21,9 +21,16 @@ public class TodoController {
         return ResponseEntity.ok(todoService.getTodos());
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> deleteTodo() {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTodo(@PathVariable("id") long id) {
+        todoService.deleteTodo(id);
         return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+    }
+
+    @PatchMapping
+    public ResponseEntity<Void> updateTodo(@RequestBody Todo todo) {
+        todoService.editTodo(todo);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 
     @PostMapping
