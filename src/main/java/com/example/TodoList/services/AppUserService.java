@@ -2,7 +2,6 @@ package com.example.TodoList.services;
 
 import com.example.TodoList.models.AppUser;
 import com.example.TodoList.repositories.AppUserRepo;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
 @Service
-@Transactional
 public class AppUserService {
     @Autowired
     private AppUserRepo appUserRepo;

@@ -13,7 +13,6 @@ import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
-@Transactional
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
